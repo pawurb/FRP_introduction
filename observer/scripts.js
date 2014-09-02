@@ -1,4 +1,7 @@
 $(function(){
+  var loginValid;
+  var passwordValid;
+
   var isValidLogin = function(text) {
     return text.length > 2;
   };
@@ -6,10 +9,6 @@ $(function(){
   var isValidPassword = function(text) {
     return text.length > 2;
   };
-
-  var loginValid = false;
-  var passwordValid = false;
-  $('#button').attr('disabled', 'disabled');
 
   $('#login').on('keyup', function() {
     loginValid = isValidLogin($(this).val());
