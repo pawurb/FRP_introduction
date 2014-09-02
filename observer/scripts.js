@@ -3,11 +3,11 @@ $(function(){
   var passwordValid;
 
   var isValidLogin = function(text) {
-    return text.length > 2;
+    return text.length > 5;
   };
 
   var isValidPassword = function(text) {
-    return text.length > 2;
+    return text.length > 5;
   };
 
   $('#login').on('keyup', function() {

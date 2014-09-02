@@ -1,5 +1,5 @@
 $(function(){
-  // Helper methods responsible for side effects
+  // Non-functional helper methods responsible for side effects
   var setTextFieldClass = function(selector, valid) {
     if(valid) {
       $(selector).addClass('valid');
@@ -18,10 +18,11 @@ $(function(){
     }
   };
 
+  // Functional code
   // Login input field events stream
   var loginValid = $('#login').asEventStream('keyup')
   .map(function(e) {
-    return e.target.value.length > 2;
+    return e.target.value.length > 5;
   });
 
   loginValid.onValue(function(valid) {
@@ -31,7 +32,7 @@ $(function(){
   // Password input field events stream
   var passwordValid = $('#password').asEventStream('keyup')
   .map(function(e) {
-    return e.target.value.length > 2;
+    return e.target.value.length > 5;
   });
 
   passwordValid.onValue(function(valid) {
