@@ -11,7 +11,8 @@ $(function(){
   };
 
   $('#login').on('keyup', function() {
-    if(isValidLogin($(this).val())){
+    loginValid = isValidLogin($(this).val());
+    if(loginValid){
       $(this).addClass('valid');
       $(this).removeClass('invalid');
       if(passwordValid) {
@@ -25,7 +26,8 @@ $(function(){
   });
 
   $('#password').on('keyup', function() {
-    if(isValidPassword($(this).val())){
+    passwordValid = isValidPassword($(this).val());
+    if(passwordValid){
       $(this).addClass('valid');
       $(this).removeClass('invalid');
       if(loginValid) {
